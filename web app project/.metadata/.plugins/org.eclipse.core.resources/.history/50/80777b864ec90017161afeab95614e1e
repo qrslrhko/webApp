@@ -1,0 +1,315 @@
+/* @CHARSET "UTF-8"; */
+
+	
+        div.account{ 
+        		position:relative;
+     			bottom:150px;
+        		height:	550px ;
+         		width:	900px ;  
+         		left: 250px;
+         		top: 30px;
+         		background-image: url("backgroundAccount.jpg"); 
+         		
+        }	
+
+ 		.pink {
+       			position:absolute;
+        		opacity: 0.5; 
+        		height:	292px ;
+         		width:	457px ;  
+         		left: 56px;
+         		top: 64px;
+        }  
+
+        
+         .pink:hover  {
+       			position:absolute;
+        		opacity: 0.5; 
+        		height:	292px ;
+         		width:	457px ;  
+         		left: 56px;
+         		top: 64px;
+        		background-image: url("pink.jpg"); 
+        } 
+        
+         div.pink:hover  h3.signInSmall{        	
+         		 display: block;
+         }
+         
+         div.pink:hover  p.firstN{        	
+         		 display: block;
+         }
+         
+         div.pink:hover  input.inputFirstN{        	
+         		 display: block;
+         }
+         
+         div.pink:hover  p.lastN{        	
+         		 display: block;
+         }
+         
+        div.pink:hover  input.inputLastN{        	
+         		 display: block;
+         }
+      	div.pink:hover  input.submitAccount{        	
+         		 display: block;
+         }
+ 
+        div.appleBlue{
+        		position:relative;
+        		bottom:150px;
+        		height:	600px ;
+         		width:	900px ;  
+         		left: 250px;
+         		top: 20px;
+        		background-image: url("appleBlue.jpg");
+
+        }
+        
+         div.appleBlue h3.signInSmall{
+         	position:absolute;
+         	display:none;
+         } 
+         
+         div.appleBlue p.firstN{
+         	position:absolute;
+         	display:none;
+         } 
+         
+          div.appleBlue input.inputFirstN{
+         	position:absolute;
+         	display:none;
+         } 
+         
+         div.appleBlue p.lastN{
+         	position:absolute;
+         	display:none;
+         } 
+        
+        
+         div.appleBlue input.inputLastN{
+         	position:absolute;
+         	display:none;
+         } 
+         
+         div.appleBlue input.submitAccount{
+         	position:absolute;
+         	display:none;
+         } 
+        
+        
+         .blue {
+       			position:absolute;
+        		opacity: 0.5; 
+        		height:	278px ;
+         		width:	457px ;  
+         		left: 366px;
+         		top: 282px;
+        }  
+
+        
+         .blue:hover  {
+       			position:absolute;
+        		opacity: 0.6; 
+        		height:	278px ;
+         		width:	457px ;  
+         		left: 366px;
+         		top: 282px;
+        		background-image: url("blue.jpg"); 
+        } 
+       
+         div.appleBlue .GoAccount{
+         	position:absolute;
+         	display:none;
+         } 
+         
+         div.appleBlue .GotoNew{
+         	position:absolute;
+         	display:none;
+         } 
+         
+         .GoAccount{
+ 			position:absolute; 
+ 			left: 120px;
+         	top: 100px;
+ 			color :Blcok;
+ 		 	font-weight: bold;
+ 		 	width:	300px;
+ 		 	font-size: 200%;;
+ 		}
+ 		 div.blue:hover .GoAccount{        	
+         	display: block;
+         }
+         
+         div.blue:hover .GotoNew{        	
+         	display: block;
+         }
+         
+        .GotoNew {
+       			position:absolute;
+        		opacity: 0.5; 
+        		height:	278px ;
+         		width:	457px ;  
+         		left: 366px;
+         		top: 282px;
+        	
+        } 
+         
+        
+        
+        table {        	
+        	background-color : pink;
+        }
+     /*    body	{background-color: rgb(240, 249, 239);} */
+       
+       
+        h2		{background-color:  rgb(28, 205, 187);}	
+        
+        
+        .titlecolor {
+        	color: red;
+        }
+        
+        
+        .title_account {
+       		position:relative;
+     		bottom:150px;
+        	height:	100px ;
+         	width:	500px ;  
+         	left: 70px;
+         	top: 40px;
+        	color: black;
+         	font-weight: bold;
+ 		 	font-size: 200%;;
+         }
+         
+         .accountBox{
+         	position:relative;
+     		bottom:150px;
+        	height:	100px ;
+         	width:	500px ;  
+         	left: 70px;
+         	top: 40px;
+         
+         
+         }
+         
+         
+    
+        .remainder {color:red;}
+        
+        .rem_word { font-size: 80%;}
+ 		
+ 		.signInSmall {
+ 			position:absolute; 
+ 			left: 80px;
+         	top: 30px;
+ 			color :Blcok;
+ 		 	font-weight: bold;
+ 		 	font-size: 200%;
+ 		}
+ 		 .firstN {
+ 			position:absolute; 
+ 			left: 80px;
+         	top: 100px;
+ 			color :Blcok;
+ 		 	font-weight: bold;
+ 		 	font-size: 100%;;
+ 		}
+ 		
+ 		 .inputFirstN {
+ 			position:absolute; 
+ 			left: 180px;
+         	top: 113px;
+ 			color :black;
+ 		 	/* font-weight: bold; */
+ 		 	font-size: 115%; 
+ 		}
+ 		
+ 		 .lastN {
+ 			position:absolute; 
+ 			left: 80px;
+         	top: 150px;
+ 			color :Blcok;
+ 		 	font-weight: bold;
+ 		 	font-size: 100%;;
+ 		}
+ 		
+ 		 .inputLastN{
+ 			position:absolute; 
+ 			left: 180px;
+         	top: 160px;
+ 			color :black;
+ 		 	/* font-weight: bold; */
+ 		 	font-size: 115%; 
+ 		}
+ 		
+
+ 		 .submitAccount{
+ 			position:absolute; 
+ 			left: 80px;
+         	top: 200px;
+ 			color :black;
+ 		 	/* font-weight: bold; */
+ 		 	font-size: 110%; 
+ 		}
+ 		
+ 		.errorReminder{
+ 			position:absolute;
+ 			height:	150px ;
+         	width:	200px ;  
+ 			left: 120px;
+ 			top: 400px;
+ 			color :black;
+ 			font-family: Bookman Old Style; 
+ 			/* opacity:0.2; */
+ 			background-rgb(227, 229, 232);
+ 		
+ 		}
+ 		
+		.goMainPage{
+			position:absolute;
+			height:	200px ;
+         	width:	200px ;  
+ 			left: 70px;
+ 			top: 485px;
+ 			/* background-color: rgb(222, 224, 226); */
+		} 		
+
+		.goFruitMenu{
+			position:absolute;
+			height:	200px ;
+         	width:	200px ;  
+ 			left: 220px;
+ 			top: 485px;
+		
+		
+		}
+		
+		.EditButton{
+	        width: 150px;
+	       /*  height: 100px; */
+	  
+        }
+        
+        .EditButton:hover{
+        	font-weight: bold; 
+        	background-color:rgb(204, 214, 232);
+        }
+        
+        
+        .AaveButton{
+        	/* width: 150px; */
+        }
+        .AaveButton:hover{
+        	font-weight: bold; 
+        	background-color:rgb(178, 204, 171);
+        }
+		
+		
+
+
+ 		.block {position:absolute; top: 10px; left: 50px; width:40px; height:40px; background-color:#F00; float:left; margin-left:10px; }
+ 	
+ 
+ 

@@ -1,0 +1,163 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="mainfruit.css"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<title>Fruit Menu</title>
+<script> 
+$(document).ready(function(){
+    $("#menu").click(function(){
+       /*  $("#panel").toggle(10);  */
+		$(".transparency").toggle(10);  
+        $(".transparencyAccount").toggle(20);
+        $(".transparencyWelcome").toggle(30); 
+    });
+
+});
+
+
+</script>
+</head>
+	<body>
+		
+	<!-- 	<form action = "/mainpage/fruitorder.jsp" method = "POST" > -->
+			
+			<%@ page language="java" %>
+			<%@ page import="java.util.*" %>
+			<%! 
+			%>
+ 	<!-- 		
+			<div class = "fruitButton">
+				<a href= "http://localhost:8080/mainpage/show_info.jsp">
+				<img class = "fruitButtonGo"  > 
+				</a>
+				fruits
+			</div> 
+			
+			<div class = "accountButton" >
+				<a href= "http://localhost:8080/mainpage/account_info.jsp">
+				<img class = "accountButtonGo"  > 
+				</a>
+				My account
+			</div> 
+			
+			<div class = "mainpageButton" >
+				<a href= "http://localhost:8080/mainpage/a1.jsp">
+				<img class = "mainpageButtonGo" > 
+				</a>
+				Welcome Page
+			</div>  -->
+			
+			
+		<!-- </form> -->
+			
+			<div class= "fruitlist">
+					
+					<div class = "logo">
+					</div>					
+					<h3 class = "fruitTitle">Fruits</h3>
+					
+					<div class = "Show_info_rightside" >
+						<p class= "rightInfo"> These are our current fruits, click the picture to get information of fruits. </p>
+					</div>
+					
+					<button id = "cart"></button>	
+					
+					<%-- <!-- how many items in shopping carts -->
+					<%
+					System.out.println("");
+										
+					%> --%>
+					
+					
+					
+					<p class= "countItems">1</p>
+					<button id = "menu"></button>
+						
+					<!-- <div id="panel">Hello world!</div>  -->
+		  			
+	  				<a href= "http://localhost:8080/mainpage/show_info.jsp">
+					<img id = "FButton">									
+					<div class = "transparency">
+						<div class ="Fword">fruits </div>	
+					</div> 
+				 	</a>   
+				 	
+		 		 	<a href= "http://localhost:8080/mainpage/account_info.jsp">
+					<img id = "AButton" > 
+					<div class = "transparencyAccount">
+						<div class ="Aword">My account </div>	
+					</div> 
+					</a>
+				 	
+				 	<a href= "http://localhost:8080/mainpage/a1.jsp">
+						<img class = "WButton" > 
+						<div class = "transparencyWelcome">
+							<div class ="Wword">Welcome Page </div>	
+						</div> 
+					</a> 
+			
+					
+			
+ 					<% String userN =(String)session.getAttribute("userName");  %>
+					<% String user =(String)session.getAttribute("userId");  %>
+ 					<% /* int CurrentNumItems = 0;  */
+ 						int NumItem = 	session.getAttribute("CurrentNumItems");
+ 						
+ 						session.setAttribute("CurrentNumItems", NumItem);
+ 					%>
+					<div class = "welcomeword">
+							<p> Hi, <%out.println( userN); %> <br>
+							 Welcome black </p> 
+					</div>
+
+					<form action = "/mainpage/tomato.jsp" method = "POST" >
+						<input class = "tomato" type="submit" name="tomato" value = "Tomato"  >
+					</form>
+					
+					<form action = "/mainpage/raspberry.jsp" method = "POST" >
+						<input class = "raspberry" type="submit" name="raspberry" value = "raspberry"  >
+					</form>
+										
+					<form action = "/mainpage/pear.jsp" method = "POST" >
+						<input class = "pear" type="submit" name="pear" value = "pear"  >
+					</form>
+					
+					<form action = "/mainpage/apple.jsp" method = "POST" >
+						<input class = "apple" type="submit" name="apple" value = "apple"  >
+					</form>
+					
+					
+					
+					<div class = "checkoutInfo">
+					
+					<form action = "/mainpage/show_info.jsp" method = "POST" >
+						<!-- <input type = "submit" value = "add to shopping bag" name ="shoppingbag"  />  -->
+						<input type = "hidden" value = "add to shopping bag" name ="shoppingbag"  /> 
+					</form>
+					<form action = "/mainpage/checkout.jsp" method = "POST" >
+						<!-- <input type = "submit" value = "check out" name ="checkout"  />  -->
+						<input type = "hidden" value = "check out" name ="checkout"  /> 
+					</form>
+					
+					</div>
+					
+					
+				
+					
+			</div>
+			
+				<% String FirstName =(String)session.getAttribute("firstName");
+					System.out.println("first name: " + FirstName);
+					
+				%>
+				
+
+			
+		
+	
+	</body>
+</html>

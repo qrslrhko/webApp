@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css"> 
+<script src="./libs/jquery/1.10.1/jquery.min.js"></script>
+<title>Local fruits in OR</title>
+</head>
+	<body>
+		    <%@ page language="java" %>
+			<%@ page import="java.util.*" %>
+			<%! 
+			%>
+			
+		<form action = "first" method = "POST" >
+
+	 		<div class ="appleBlue">	
+					
+			 	<div class ="pink">	
+			 		<h3 class = "signInSmall" >sign in </h3> 							 	
+			 		<p class = "firstN">Email:  </p>			 		
+					<input class = "inputFirstN" type = "text" name = "email"/> <br>
+			 		<p class = "lastN" > Password:</p>	
+			 		<input  class = "inputLastN"  type = "password" name = "password" />     
+			 		<input class = "submitAccount" type = "submit"  value = "sign in" name = "submit"  />
+			 	</div>	
+
+			 	<div class = "blue">			 			 		
+			 		<h3 class = "GoAccount" > create an account  </h3> 	
+			 		<a href= "http://localhost:8080/mainpage/account.jsp ">
+			 		<img class = "GotoNew" src="blue.jpg" alt="upper blue"  style =" opacity:0.1 ; position:absolute; top:1px; left:1px" 
+			 			 width="457px" height="278px">
+			 		</a>
+			 		
+			 	</div>
+			 	
+				
+			</div>	 	
+			
+
+			
+		</form>
+	</body>
+</html>

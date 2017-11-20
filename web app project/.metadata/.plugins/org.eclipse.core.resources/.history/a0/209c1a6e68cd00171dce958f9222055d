@@ -1,0 +1,911 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="mainfruit.css"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+			<script> 
+			$(document).ready(function(){
+			    $("#menu").click(function(){
+			       /*  $("#panel").toggle(10);  */
+					$(".transparency").toggle(10);  
+			        $(".transparencyAccount").toggle(20);
+			        $(".transparencyWelcome").toggle(30); 
+			    });
+			
+			});
+			</script>
+<title>check out</title>
+
+			
+			<script type="text/javascript">
+					function myFunction() {
+
+						var myDiv = document.getElementById("myDiv");
+						//Create array of options to be added
+						var array = ["Volvo","Saab","Mercades","Audi"];
+
+						//Create and append select list
+						var selectList = document.createElement("select");
+						selectList.setAttribute("id", "mySelect");
+						myDiv.appendChild(selectList);
+
+						//Create and append the options
+						for (var i = 0; i < array.length; i++) {
+						    var option = document.createElement("option");
+						    option.setAttribute("value", array[i]);
+						    option.text = array[i];
+						    selectList.appendChild(option);
+						}
+						
+						/* return   selectList.appendChild(option); */
+						
+					}				
+			</script>
+			
+			
+			
+			<script type="text/javascript">
+	 
+			function itemnode2(a,b,c,d,e,topa ,myS, mydemo, newdiv, myButton, udateQ){
+				
+				var my_form=document.createElement('FORM');
+				my_form.name='myForm';
+	 			my_form.method='GET'; 
+				my_form.action='checkout.jsp'; 
+							
+				var myDiv = document.createElement("DIV");
+				myDiv.setAttribute("id", newdiv);
+				myDiv.setAttribute("value", newdiv);
+				myDiv.style.position = 'absolute';
+				/* myDiv.style.width = '800px';
+				myDiv.style.height = '200px'; */
+				myDiv.style.width = '700px';
+				myDiv.style.height = '150px';
+				myDiv.style.top = topa;
+				myDiv.style.left = '273px';
+				/* myDiv.style.background  = 'white'; */
+				myDiv.style.backgroundColor = "rgba(252, 252, 252 ,10)";
+				/* background-color: rgba(211, 209, 209, 0.5); */
+				my_form.appendChild(myDiv); 
+				/* myDiv.style.background.opacity= '0.5'; */
+	
+		
+			    var image = document.createElement('img');
+			    image.src = b;   
+			    image.style.width = '20%'; 
+			    image.style.position='absolute';
+			    image.style.left = '20px';
+			    image.style.top = '30px';
+			    myDiv.appendChild(image); 
+			    my_form.appendChild(myDiv); 
+			    
+			    var fruitname = document.createElement('P');
+			    fruitname.style.position='absolute';
+			    fruitname.style.left = '200px';
+			    fruitname.style.top = '40px';
+			    fruitname.style.fontSize = "110%";
+			    fruitname.style.fontFamily  = "Lucida Sans Unicode,Lucida Grande,sans-serif"; 
+			    var word = document.createTextNode(a); 			 	
+			    fruitname.appendChild(word);			   
+			    myDiv.appendChild(fruitname);
+			    my_form.appendChild(myDiv); 
+			    			    
+			    var price = document.createElement('P');
+			    price.style.position='absolute';
+			    price.style.left = '350px';
+			    price.style.top = '50px';
+			    var word = document.createTextNode(c); 			 	
+			    price.appendChild(word);			   
+			    myDiv.appendChild(price);
+			    my_form.appendChild(myDiv); 
+			    
+			    
+			    var selectq = document.createElement('select');
+			    selectq.style.position='absolute';
+			    selectq.style.left = '450px';
+			    selectq.style.top = '65px';
+			    selectq.setAttribute("id", myS);
+			    selectq.setAttribute('name', myS);
+				myDiv.appendChild(selectq);	
+				my_form.appendChild(myDiv); 		
+				//Create and append the options
+				var array = ["1","2","3","4","5","6","7","8","9","10","11"];
+				for (var i = 0; i < array.length; i++) {
+				    var option = document.createElement("option");
+				    option.setAttribute("value", array[i]);
+	 			    if(array[i] == d ){
+				    	option.setAttribute("selected", "selected");				    	
+				    } 
+				    
+				    option.text = array[i];
+				    selectq.appendChild(option);
+				}						
+				
+				var totalprice = document.createElement('P');
+				totalprice.style.position='absolute';
+				totalprice.style.left = '600px';
+				totalprice.style.top = '50px';
+			    var word = document.createTextNode(e); 			 	
+			    totalprice.appendChild(word);			   
+			    myDiv.appendChild(totalprice);
+			    my_form.appendChild(myDiv); 
+	
+			    var changeq = document.createElement('P');
+			    changeq.setAttribute("id", mydemo);
+			    changeq.style.position='absolute';
+			    changeq.style.left = '450px';
+			    changeq.style.color = 'red';
+			    changeq.style.fontWeight = "900";
+			    changeq.style.top = '10px';
+			    changeq.style.fontSize = "70%";
+			    changeq.style.fontFamily  = "Lucida Sans Unicode,Lucida Grande,sans-serif";
+			    var word = document.createTextNode("change Quailty"); 			 	
+			    changeq.appendChild(word);			   
+			    myDiv.appendChild(changeq);
+			    my_form.appendChild(myDiv); 
+			    
+			    
+
+ 			    var removebutton = document.createElement('button'); 
+			    removebutton.setAttribute("id", myButton);
+			    removebutton.setAttribute("name",myButton);
+			    removebutton.setAttribute("value",myButton);
+	    
+			    removebutton.style.position='absolute';
+			    removebutton.style.left = '590px';
+			    removebutton.style.color = 'black';
+			    removebutton.style.fontWeight = "900";
+			    removebutton.style.top = '110px';
+
+				var word  = document.createTextNode("Remove item");
+				removebutton.appendChild(word);
+				myDiv.appendChild(removebutton); 
+				my_form.appendChild(myDiv);  
+				
+				
+/* 				var a = document.createElement('a');
+				var linkText = document.createTextNode("remove button");
+				
+				a.setAttribute("id", myButton);
+				a.setAttribute("name",myButton);
+				a.setAttribute("value",myButton);
+				a.style.position='absolute';
+				a.style.left = '780px';
+				a.style.color = 'black';
+				a.style.fontWeight = "900";
+				a.style.top = '150px';
+				a.title = "my title text";
+				a.href = "http://localhost:8080/mainpage/checkout.jsp";
+								
+				a.appendChild(linkText);
+				myDiv.appendChild(a);  */
+				
+			    			    
+/* 			    var s = document.createElement('INPUT'); 
+			    s.setAttribute("id", "submitbotton");
+			    s.style.position='absolute';
+			    s.style.left = '640px';
+			    s.style.color = 'blue';
+			    s.style.fontWeight = "900";
+			    s.style.top = '150px';
+				s.setAttribute("type", "submit");
+				s.setAttribute("value","update quality");
+				myDiv.appendChild(s); 
+				my_form.appendChild(myDiv);   */
+			    
+ 			    var s = document.createElement('button'); 
+			    s.setAttribute("id", udateQ);
+			    s.setAttribute("name",udateQ);
+			    s.setAttribute("value",udateQ);
+	    
+			    s.style.position='absolute';
+			    s.style.left = '450px';
+			    s.style.color = 'red';
+			    s.style.fontWeight = "900";
+			    s.style.top = '110px';
+			   /*  s.style.fontFamily  = "Lucida Sans Unicode,Lucida Grande,sans-serif"; */
+				var word  = document.createTextNode("update quailty");
+				s.appendChild(word);
+				myDiv.appendChild(s); 
+				my_form.appendChild(myDiv);  
+				
+
+			    document.body.appendChild(my_form);
+
+				var x = document.getElementById(myS).value;
+			   document.getElementById(mydemo).innerHTML = "Quality: " + x;    
+ 			   
+  			    var s = document.getElementById(myS); 
+			    s.addEventListener('change',
+					   function(){			
+			    	   
+				   		 	choose(myS,mydemo);			   				   
+			   			},
+			    false); 
+			  
+				/* test    */
+   	 		    var removeit = document.getElementById(myButton); 
+			    removeit.addEventListener('onclick',
+					   function(){		
+			    			
+			    	      document.getElementById(mydemo).innerHTML = "Hello World";
+			    	       
+			    	 		/* removeNode(newdiv);			 */   				   
+			   			},
+			    false);    
+			    
+
+		 		var show = document.getElementById(myButton).value;		 		
+		 		
+		 		if(show == "undefined"){
+		 			document.getElementById("demo").innerHTML = "is undefined";
+		 			<%
+		 				System.out.println("~~~UPDATE~~~~~");
+		 			%>
+		 			window.open("http://localhost:8080/mainpage/checkout.jsp","_self");
+		 			
+		 		}
+			    
+	   
+			   /*  return document.getElementById(myButton).value ; */
+			    
+			}  
+			 
+			 
+			 
+			</script>
+						
+			
+			<script type="text/javascript">
+	 					function choose(sid,pid) {
+	 		 			 			 		  
+	 			 			var x = document.getElementById(sid).value;
+	 			 			/* pid.style.fontFamily  = "Lucida Sans Unicode,Lucida Grande,sans-serif"; */
+	 			 			document.getElementById(pid).innerHTML = "Changed! current quality is : " + x;
+	 			 			
+	 			 			
+	 			 			// update total price 	
+	 			 		
+	 			 			
+	 			 			
+	 			 		}
+	 					/* var myDiv = ["divA","divB","divC","divD","divE"]; */
+	 					function removeNode(removeTarget){
+	 						var list = document.getElementById(removeTarget);
+	 					   list.parentNode.removeChild(list); 
+	 					   
+	 					   
+
+	 					}
+	 					
+			</script>
+			
+
+</head>
+		<body>
+			<%@ page language="java" %>
+			<%@ page import="java.util.*" %>
+			<%@ page import= "java.io.BufferedReader" %>
+			<%@ page import= "java.io.FileNotFoundException" %>
+			<%@ page import= "java.io.FileReader" %>
+			<%@ page import= "java.io.IOException" %>
+			<%@ page import= "java.io.PrintWriter" %>
+			<%@page import = "java.io.File" %>
+			<%@page import = "java.io.Writer" %>
+			<%@page import = "java.io.BufferedWriter" %>
+			<%@page import = "java.io.FileWriter" %>
+			<%@page import = "java.util.Iterator" %>
+			
+			<%! 
+			%>
+					
+			<div class= "fruitlistCheckOut">
+				<div class = "logo"> </div>
+				<h3 class = "fruitTitle"> Shopping Cart</h3>
+				
+					<button id = "menu"></button>		
+					<!-- <div id="panel">Hello world!</div>  -->
+		  			
+	  				<a href= "http://localhost:8080/mainpage/show_info.jsp">
+					<img id = "FButton">									
+					<div class = "transparency">
+						<div class ="Fword">fruits </div>	
+					</div> 
+				 	</a>   
+				 	
+		 		 	<a href= "http://localhost:8080/mainpage/account_info.jsp">
+					<img id = "AButton" > 
+					<div class = "transparencyAccount">
+						<div class ="Aword">My account </div>	
+					</div> 
+					</a>
+				 	
+				 	<a href= "http://localhost:8080/mainpage/a1.jsp">
+						<img class = "WButton" > 
+						<div class = "transparencyWelcome">
+							<div class ="Wword">Welcome Page </div>	
+						</div> 
+					</a> 
+				
+				
+				
+				<p id="demo"></p>					
+					<%String userN =(String)session.getAttribute("userName");  %>
+					<% String user =(String)session.getAttribute("userId");  %>
+			<%
+				String filePath;
+				
+				if(user == null){
+					filePath = "/Users/Chiaoysbaby/desktop/pro1/mainpage/user1.txt";			
+				}
+				else{
+					StringBuilder originalLine = new StringBuilder();
+					originalLine.append("/Users/Chiaoysbaby/desktop/pro1/mainpage/");
+					StringBuilder userName = new StringBuilder();
+					userName.append(user);
+					userName.append(".txt");
+					
+					originalLine.append(userName);
+					System.out.println("store to this path: "+">" +originalLine +"<"    );
+					
+					String newStr = originalLine.toString();
+					filePath = new String(newStr); 
+
+				}
+			 	
+				
+				
+				/* String filePath = "/Users/Chiaoysbaby/desktop/pro1/mainpage/user1.txt"; */
+				String respberryNum= "";
+				String redtomatoNum= "";
+				String yellowtomatoNum= "";
+				String appleNum= "";
+				String pearNum= "";
+								
+				BufferedReader it = new BufferedReader(new FileReader(filePath));
+				HashMap<String, LinkedList<String> > map = new  HashMap<String, LinkedList<String> >();
+								
+					String line = it.readLine();
+	
+					while(line != null){
+						System.out.println("first read --> " + line);
+						int size = line.length();
+			
+						String unit1 = Character.toString(line.charAt(0));
+						String unit2 = Character.toString(line.charAt(1));
+	
+						if(unit1.equals("r") && unit2.equals("a")  ){
+							LinkedList link = new LinkedList();
+							respberryNum = line.substring(10,size);	
+							String respberryPrice = "3";
+							String imagePath = "raspberry.jpg";
+							link.add(imagePath);
+							link.add(respberryPrice);  // add price of respberry
+							link.add(respberryNum);   // add quality 
+							int total = Integer.parseInt(respberryPrice) * Integer.parseInt(respberryNum);
+							String totalprice = Integer.toString(total);
+							link.add(totalprice);
+							
+							map.put("raspberry",link);
+						}
+						if(unit1.equals("r") && unit2.equals("e")){
+							LinkedList link = new LinkedList();
+							String redtomatoPrice = "5";
+							String imagePath = "tomatos.jpg";
+							redtomatoNum = line.substring(10,size);
+							int total = Integer.parseInt(redtomatoPrice)*Integer.parseInt(redtomatoNum);
+							String totalPrice  = Integer.toString(total);
+							link.add(imagePath); //add image src
+							link.add(redtomatoPrice); // add price
+							link.add(redtomatoNum); // add quality 
+							link.add(totalPrice); // add  total price
+							map.put("redtomato",link);
+						}
+						if(unit1.equals("y")){
+							LinkedList link = new LinkedList();
+							String yellowtomatoPrice = "5";
+							String imagePath = "tomatos.jpg";
+	 						yellowtomatoNum = line.substring(13, size);
+	 						int a = Integer.parseInt(yellowtomatoPrice);
+	 						int b = Integer.parseInt(yellowtomatoNum);
+	 	 					int total = a*b;
+							String totalPrice  = Integer.toString(total);
+							link.add(imagePath); //add image src
+							link.add(yellowtomatoPrice); // add price
+							link.add(yellowtomatoNum); // add quality 
+							link.add(totalPrice); // add  total price							
+							map.put("yellowtomato",link); 
+						}
+						if(unit1.equals("a")){
+							LinkedList link = new LinkedList();
+							String applePrice = "1";
+							String imagePath = "applenew.jpg";
+							appleNum = line.substring(6, size);
+						 	int a = Integer.parseInt(applePrice);
+							int b = Integer.parseInt(appleNum); 
+							int total = a*b;							
+		 					String totalPrice  = Integer.toString(total);
+							link.add(imagePath); //add image src
+							link.add(applePrice); // add price
+							link.add(appleNum); // add quality 
+							link.add(totalPrice); // add  total price	 
+													 
+							map.put("apple",link);
+						}
+						if(unit1.equals("p")){
+							LinkedList link = new LinkedList();
+							String pearPrice = "1";
+							String imagePath = "pearsnew.jpg";							
+							pearNum  = line.substring(5, size);		
+							int a = Integer.parseInt(pearPrice);
+							int b = Integer.parseInt(pearNum);
+							int total = a*b;
+							
+							String totalPrice  = Integer.toString(total);
+							link.add(imagePath); //add image src
+							link.add(pearPrice); // add price
+							link.add(pearNum); // add quality 
+							link.add(totalPrice); // add  total price								
+							map.put("pear",link);  
+						}
+
+						line = it.readLine();
+					
+					}
+					
+				 
+				%>
+			
+			
+			<table class = "itemtable">
+				<tr>
+					<th class = "Itemth" > Item  </th>
+					<th  class = "therth1" > Item Price </th> 
+					<th class = "therth2" > Quality </th>
+					<th class = "therth3"> Total Price </th>
+				</tr>
+		
+			</table>
+				
+			 			
+ 			<%
+				/* store values in  keylist[][] */
+				Set set = map.keySet();
+			    int mapsize = map.size();
+				Iterator current = set.iterator();
+				int size = map.size();
+				int row = size;
+				int col = 5;
+				String[][] keylist = new String[size][5];
+				
+				
+				int count = 0;
+				int totalPrice = 0; 
+				while(current.hasNext()){
+					String key = current.next().toString();
+					int s = 0;
+					keylist[count][s] = key;  // store key  in [][0] 
+					s++;
+					
+ 	 				for( int i = 0; i< 4; i++){
+						keylist[count][s] = map.get(key).get(i);  
+						if(i == 3){
+							totalPrice = totalPrice + Integer.parseInt(map.get(key).get(i)) ;							
+						}
+						s++;					
+					}   			
+					count ++;
+				}
+				System.out.println(">>>>  total price: " +totalPrice);
+ 				StringBuffer values = new StringBuffer();				
+				
+ 				for(int i =0; i<row; i++){
+ 					 values.append('[');
+					for(int j = 0; j< col; j++){
+					
+						values.append('"').append(keylist[i][j]  ).append('"');
+						 if (j<(col-1) ) {
+						        values.append(',');
+						    }
+					}
+					
+					 values.append(']');
+					 if( i<(row-1)){
+						 values.append(',');	 
+					 }
+					 
+				} 
+				
+				System.out.println("value: " +values );   
+				/* ((HttpServletResponse)response).sendRedirect("/mainpage/checkout.jsp"); */
+			%>	 
+			
+			
+			<div class = "proceedToCheckOut">
+					<h3 class = "proceedStyle">Order summary: </h3>
+					<h3 class = "proceedStyle2"> Subtotal:  $ <%= totalPrice %>  </h3> 
+					<h3 class = "proceedStyle2"> shipping: TBD  </h3> 				
+			</div>
+			
+
+			 <script type="text/javascript">
+			
+					var i;
+				 	var j;
+				 	var array;
+				 	var x = new Array(<%=row%>);
+				 	for (var i = 0; i < <%=row%>; i++) {
+				 	  x[i] = new Array(<%=row%>);
+				 	}			 				 			
+					x = [<%= values %>];  
+					 
+					var topa = '330px';
+					var topb = '580px';
+					
+					var mySelect = ["mySelectA","mySelectB", "mySelectC", "mySelectD","mySelectE"];
+					var ChangeQality = ["QualityA","QualityB","QualityC", "QualityD","QualityE"];
+					var toprange = ["250px","420px","590px","760px","930px"];
+					var myDiv = ["divA","divB","divC","divD","divE"];
+					var myButton = ["myButtonA","myButtonB","myButtonC","myButtonD","myButtonE"];
+					var updateQ = ["updatQualityA","updatQualityB","updatQualityC","updatQualityD","updatQualityE"];
+					var returnvalue;
+					for(var count = 0; count < <%=row%> ; count ++){
+						itemnode2(x[count][0],x[count][1],x[count][2],x[count][3],x[count][4],toprange[count],mySelect[count],ChangeQality[count],myDiv[count],myButton[count],updateQ[count]);  
+			
+					}
+					
+	
+			 </script>	
+			 
+ 				<%
+					
+					/* update quality and total price */
+					
+				 	String[] mySelect = {"mySelectA","mySelectB", "mySelectC", "mySelectD","mySelectE"};
+ 					String[] myButton = {"myButtonA","myButtonB","myButtonC","myButtonD","myButtonE"};
+ 					String[] myDiv = {"divA","divB","divC","divD","divE"};
+ 					String[] myQuality = {"updatQualityA","updatQualityB","updatQualityC","updatQualityD","updatQualityE"};
+ 					
+ 					StringBuffer newvalues = new StringBuffer();
+ 					String[][] newMatrix = new String[row][col];
+					String currentfruit = "";
+					String  Select = "";
+					String Quality = "";
+					String Removebutton = ""; 
+
+					int oldrow = row;
+					StringBuffer updateValues = new StringBuffer();	
+		 			int x = 0;
+		 			int newrow = 0;
+					for( x =0 ; x< row; x++){ 
+						/* System.out.println("select value " +mySelect[0] +" -> "  + Select0 );  */
+						
+						Removebutton = (String)request.getParameter(myButton[x]); 
+						Select = (String)request.getParameter(mySelect[x]);
+						Quality = (String)request.getParameter(myQuality[x]);
+					
+				
+						System.out.println("button value " +myButton[x] +" -> "  +Removebutton );	
+						System.out.println("Quality value " +myQuality[x] +" -> "  +Quality );	
+					
+					
+						
+					/*action: remove items 
+					  copy all items except the request item to a temp file, and rename the temp file to the user file
+					*/	
+					if(Removebutton != null ){
+
+					 %> 	
+												 	
+ 				 		<p id="demo" style= "color:blue"> </p>
+						<!-- rearrange items	  -->
+			 			<script type="text/javascript">				 			
+
+				 			for(var i =0; i< <%= row %> ; i++ ){
+				 				var list = document.getElementById(myDiv[i]);
+					 			list.parentNode.removeChild(list);
+				 			}
+							 							 
+						</script>    
+						
+						<%
+ 							currentfruit = keylist[x][0];
+			 				String  tempfilePath = "/Users/Chiaoysbaby/desktop/pro1/mainpage/temp.txt";
+			 				int num = 0;
+			 				File currentFile = new File(filePath);
+			 				File tempFile = new File(tempfilePath);
+			 				tempFile.createNewFile();
+		 				
+			 				BufferedReader now = new BufferedReader(new FileReader(filePath));	 
+			 				FileWriter w = new FileWriter(tempFile,true);
+			 				BufferedWriter tempwritebuffer = new BufferedWriter(w);
+			 				
+			 				String currentline = now.readLine();
+			 				System.out.println("if remove ..... " +currentfruit); 
+			 				String targeyellowtomato = "yellowtomato";
+			 				String targetraspberry = "raspberry";
+			 				String targetredtomato = "redtomato";
+			 				String targetapple = "apple";
+			 				String targetpear = "pear"; 
+			 				int rangeOfString = 0;
+			 				String target = "";
+			 				
+			 				if(currentfruit.equals(targetraspberry)){
+			 					rangeOfString = 9;
+			 					target = targetraspberry;
+			 				}
+			 				if(currentfruit.equals(targeyellowtomato)){
+			 					rangeOfString = 12;
+			 					target = targeyellowtomato;
+			 				}	
+			 				if(currentfruit.equals(targetredtomato)){
+			 					rangeOfString = 9;
+			 					target = targetredtomato;
+			 				}
+			 				if(currentfruit.equals(targetapple)){
+			 					rangeOfString = 5;
+			 					target = targetapple;
+			 				}
+			 				if(currentfruit.equals(targetpear)){
+			 					rangeOfString = 4;
+			 					target = targetpear;
+			 				}
+						
+	
+			 				if(currentfruit.equals(target)){
+			 				
+	 		 					while(currentline != null){
+	 		 													
+	 		 						StringBuilder tempstr = new StringBuilder(); 
+									int sizeline = currentline.length();
+
+									if(sizeline >= rangeOfString){ 
+										
+										if(!currentline.substring(0, rangeOfString).equals(target) ){ 
+											tempstr.append(currentline);
+											String str = tempstr.toString();
+											tempwritebuffer.write(str);												
+											tempwritebuffer.newLine(); 												
+							 		 	}  
+									} 
+			 						 else{
+										tempstr.append(currentline);
+										String str = tempstr.toString();
+										tempwritebuffer.write(str);
+										tempwritebuffer.newLine();
+									} 											 
+									currentline = now.readLine();										
+								}
+			 					tempwritebuffer.flush();
+			 					tempwritebuffer.close();		 				
+			 					// rename the file 
+			 				 	tempFile.renameTo(currentFile); 
+
+								%>
+								
+								<% 			 				
+			 					
+			 					int y = 0; 
+								int z = 0;
+								for(int i =0; i < row; i++){
+									z = 0;
+								     if(!keylist[i][0].equals(currentfruit)){
+								 		 for(int j =0; j<col; j++){									 			
+											newMatrix[y][z] = keylist[i][j];  											
+											z++;
+								 		 } 
+								 		y++; 	 
+								 	}								 	
+								}
+								int UpdateTotalPrice = 0;
+								for(int i =0; i < y; i++){
+								 	for(int j =0; j<col; j++){
+								 		System.out.print("----> "+ newMatrix[i][j]);
+								 		
+								 		if(j == 4){
+								 			UpdateTotalPrice = UpdateTotalPrice + Integer.parseInt(newMatrix[i][4]) ;	
+								 			System.out.println("  Price "+ newMatrix[i][4]);
+								 		}
+								 		
+								 		/* UpdateTotalPrice = UpdateTotalPrice + Integer.parseInt(newMatrix[i][4]) ;	 */
+								 		/* System.out.print("@@@@@current price>>: "+UpdateTotalPrice ); */
+								 	}
+								 	System.out.println(" ");
+								 } 
+								
+								 newrow = y;	
+								
+								// store in updatevalue
+				 															
+				 				for(int i =0; i<newrow; i++){
+				 					updateValues.append('[');
+									for(int j = 0; j< col; j++){
+									
+										updateValues.append('"').append(newMatrix[i][j]  ).append('"');
+										 if (j<(col-1) ) {
+											 updateValues.append(',');
+										    }
+									}
+									
+									updateValues.append(']');
+									 if( i<(row-1)){
+										 updateValues.append(',');	 
+									 }									 
+								} 
+							
+								System.out.println("updateValues: " +updateValues ); 
+								System.out.println("newrow:" +newrow);  
+								System.out.println("Update price: "+UpdateTotalPrice);
+								System.out.println("--------------------------------------------------------------");			 	
+
+								
+								%>
+								
+									<!-- update the subtotal price after removing items -->
+									<div class = "proceedToCheckOut">
+											<h3 class = "proceedStyle">Order summary: </h3>
+											<h3 class = "proceedStyle2"> Subtotal:  $ <%= UpdateTotalPrice %>  </h3> 
+											<h3 class = "proceedStyle2"> shipping: TBD  </h3> 				
+									</div>
+									
+									
+								
+									<script type="text/javascript">
+			 			 			
+						 			var i;
+								 	var j;
+								 	var array;
+								 	var x = new Array(<%=row%>);
+								 	for (var i = 0; i < <%=row%>; i++) {
+								 	  x[i] = new Array(<%=row%>);
+								 	}			 				 			
+									
+									x =  [<%= updateValues %>];	
+									var y = <%=newrow%>;	
+
+									for(var count = 0; count < <%=newrow%>; count++ ){
+										itemnode2(x[count][0],x[count][1],x[count][2],x[count][3],x[count][4],toprange[count],mySelect[count],ChangeQality[count],myDiv[count],myButton[count],updateQ[count]);   	  					
+									}
+			
+									</script>  
+								
+
+			 				<% }%>
+			 			 					
+					<% }%>
+						
+	
+					<%	
+						/* update quality of items and total price */
+				 		if(Quality != null){
+				 		
+						System.out.println("**** select friut " + Select);  
+						currentfruit = keylist[x][0];
+						System.out.println("current fruit: "+currentfruit );						
+										 				
+						String strPath;
+						
+						if(user == null){
+							/* default setting: if we don't use data from database */
+							strPath = "/Users/Chiaoysbaby/desktop/pro1/mainpage/user1.txt";			
+						}
+						else{
+							
+							/* search user info in database */
+							StringBuilder originalLine = new StringBuilder();
+							originalLine.append("/Users/Chiaoysbaby/desktop/pro1/mainpage/");
+							StringBuilder userName = new StringBuilder();
+							userName.append(user);
+							userName.append(".txt");
+							
+							originalLine.append(userName);
+							System.out.println("store to this path: "+">" +originalLine +"<"    );
+							
+							String newStr = originalLine.toString();
+							strPath = new String(newStr); 
+
+						}
+						
+						
+						
+		 				File strFile = new File(strPath);
+			 			if (!strFile.exists()) {
+			 					System.out.println("create new txt file for the user");
+			 					strFile.createNewFile();
+			 				}
+
+						 BufferedWriter objWriter = new BufferedWriter(new FileWriter(strFile , true)); 
+														
+						 StringBuilder a = new StringBuilder(); 
+						 a.append(currentfruit);
+						 a.append(" ");
+						 a.append(Select);
+						 String str = a.toString();
+						 objWriter.write(str); 
+						 objWriter.newLine();
+										 
+						 objWriter.flush();
+						 objWriter.close();
+			  
+						/* 	x is the current item: update new quality and total price  */				 			
+						keylist[x][3] = Select;
+					 	int newtotal = Integer.parseInt(keylist[x][2])*Integer.parseInt(keylist[x][3]);
+					 	String newTotalPrice = Integer.toString(newtotal);					 		
+					 	keylist[x][4] = newTotalPrice;
+					 	
+					 	/* update subtotal price in order summary */
+					 	int updatePrice = 0;
+					 	System.out.println("row: " +x);
+					 	for(int i =0; i< row; i++){
+					 		for(int j =0; j<5; j++){
+					 			System.out.println("----: "+keylist[i][j]);
+					 			if(j == 4){
+					 				updatePrice = updatePrice + Integer.parseInt(keylist[i][j]); 
+					 			}
+					 		}
+					 	}
+					 	
+					 						 						 										
+			 			for(int i =0; i<row; i++){
+			 					newvalues.append('[');
+								for(int j = 0; j< col; j++){								
+									newvalues.append('"').append(keylist[i][j]  ).append('"');
+									 if (j<(col-1) ) {
+										 newvalues.append(',');
+									    }
+								}
+								
+								newvalues.append(']');
+								 if( i<(row-1)){
+									 newvalues.append(',');	 
+								 }
+								 
+						} 
+			 			System.out.println(">>>value: " +newvalues );  
+			 			System.out.println(">>>update Subtotal: " +updatePrice );  
+			 			System.out.println("---------------------------------------------");
+			 					 				
+					%> 		
+					
+							<!-- display the subtotal price after updating quality of items -->
+							<div class = "proceedToCheckOut">
+									<h3 class = "proceedStyle">Order summary: </h3>
+									<h3 class = "proceedStyle2"> Subtotal:  $ <%= updatePrice %>  </h3> 
+									<h3 class = "proceedStyle2"> shipping: TBD  </h3> 				
+							</div>
+									
+					
+					
+	 						<!-- rearrange items	  -->
+					 		<script type="text/javascript">
+					 			
+				 			var i;
+						 	var j;
+						 	var array;
+						 	var x = new Array(<%=row%>);
+						 	for (var i = 0; i < <%=row%>; i++) {
+						 	  x[i] = new Array(<%=row%>);
+						 	}			 				 			
+							x = [<%= newvalues %>];  					 	  
+							var count = <%=x%>;
+								itemnode2(x[count][0],x[count][1],x[count][2],x[count][3],x[count][4],toprange[count],mySelect[count],ChangeQality[count],myDiv[count],myButton[count],updateQ[count]);  
+							</script>  
+					
+						
+				<% }%> 	
+					
+				
+			 	<%}%>  
+		 					
+
+
+						
+	
+	
+			</div>	
+	
+		</body>
+</html>

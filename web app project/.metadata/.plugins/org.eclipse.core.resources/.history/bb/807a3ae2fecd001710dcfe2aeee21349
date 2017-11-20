@@ -1,0 +1,263 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+	<body>
+			<%@ page language="java" %>
+			<%@ page import="java.util.*" %>
+			<%@ page import= "java.io.BufferedReader" %>
+			<%@ page import= "java.io.FileNotFoundException" %>
+			<%@ page import= "java.io.FileReader" %>
+			<%@ page import= "java.io.IOException" %>
+			<%@ page import= "java.io.PrintWriter" %>
+			<%@page import = "java.io.File" %>
+			<%@page import = "java.io.Writer" %>
+			<%@page import = "java.io.BufferedWriter" %>
+			<%@page import = "java.io.FileWriter" %>
+			<%@page import = "java.util.Iterator" %>
+			
+			<%! 
+			%>
+			
+			<% String user =(String)session.getAttribute("userId");  %>
+			<%String userN =(String)session.getAttribute("userName");  %>
+			
+			<% 
+				  /* looking for the user's file through the user's ID */
+				  StringBuilder temp = new StringBuilder();
+				  temp.append(user);
+				  temp.append(".txt");
+				  String userFilePath = temp.toString();
+				  
+				  List<String> textFiles = new ArrayList<String>();
+				  File dir = new File("/Users/Chiaoysbaby/desktop/pro1/mainpage");
+				  for (File file : dir.listFiles()) {
+				    if (file.getName().endsWith((userFilePath))) {
+				      textFiles.add(file.getName());
+				    }
+				  }
+				  ListIterator<String> listIterator = null;
+				 
+				  listIterator = textFiles.listIterator();
+				  StringBuffer Userfile=  new StringBuffer();
+				  
+				  while(listIterator.hasNext()){
+			           /*  System.out.println(listIterator.next()); */
+			            Userfile.append(listIterator.next());
+			        }
+				  String userFile = Userfile.toString(); 
+				  int filesize = userFile.length();
+				  System.out.println("found file ------>" +Userfile +"<" );
+				  System.out.println("filesize ------>" +filesize );
+				  
+				  
+				  
+				  
+		  %> 
+		
+<% 
+			
+if(filesize != 0){
+			
+			String filePath;
+				
+				if(user == null){
+					filePath = "/Users/Chiaoysbaby/desktop/pro1/mainpage/user1.txt";			
+				}
+				else{
+					StringBuilder originalLine = new StringBuilder();
+					originalLine.append("/Users/Chiaoysbaby/desktop/pro1/mainpage/");
+					StringBuilder userName = new StringBuilder();
+					userName.append(user);
+					userName.append(".txt");
+					
+					originalLine.append(userName);
+					System.out.println("store to this path: "+">" +originalLine +"<"    );
+					
+					String newStr = originalLine.toString();
+					filePath = new String(newStr); 
+
+				}
+				
+				String respberryNum= "";
+				String redtomatoNum= "";
+				String yellowtomatoNum= "";
+				String appleNum= "";
+				String pearNum= "";
+								
+				BufferedReader it = new BufferedReader(new FileReader(filePath));
+				HashMap<String, LinkedList<String> > map = new  HashMap<String, LinkedList<String> >();
+								
+					String line = it.readLine();
+	
+					while(line != null){
+						System.out.println("first read --> " + line);
+						int size = line.length();
+			
+						String unit1 = Character.toString(line.charAt(0));
+						String unit2 = Character.toString(line.charAt(1));
+	
+						if(unit1.equals("r") && unit2.equals("a")  ){
+							LinkedList link = new LinkedList();
+							respberryNum = line.substring(10,size);	
+							String respberryPrice = "3";
+							String imagePath = "raspberry.jpg";
+							link.add(imagePath);
+							link.add(respberryPrice);  // add price of respberry
+							link.add(respberryNum);   // add quality 
+							int total = Integer.parseInt(respberryPrice) * Integer.parseInt(respberryNum);
+							String totalprice = Integer.toString(total);
+							link.add(totalprice);
+							
+							map.put("raspberry",link);
+						}
+						if(unit1.equals("r") && unit2.equals("e")){
+							LinkedList link = new LinkedList();
+							String redtomatoPrice = "5";
+							String imagePath = "tomatos.jpg";
+							redtomatoNum = line.substring(10,size);
+							int total = Integer.parseInt(redtomatoPrice)*Integer.parseInt(redtomatoNum);
+							String totalPrice  = Integer.toString(total);
+							link.add(imagePath); //add image src
+							link.add(redtomatoPrice); // add price
+							link.add(redtomatoNum); // add quality 
+							link.add(totalPrice); // add  total price
+							map.put("redtomato",link);
+						}
+						if(unit1.equals("y")){
+							LinkedList link = new LinkedList();
+							String yellowtomatoPrice = "5";
+							String imagePath = "tomatos.jpg";
+	 						yellowtomatoNum = line.substring(13, size);
+	 						int a = Integer.parseInt(yellowtomatoPrice);
+	 						int b = Integer.parseInt(yellowtomatoNum);
+	 	 					int total = a*b;
+							String totalPrice  = Integer.toString(total);
+							link.add(imagePath); //add image src
+							link.add(yellowtomatoPrice); // add price
+							link.add(yellowtomatoNum); // add quality 
+							link.add(totalPrice); // add  total price							
+							map.put("yellowtomato",link); 
+						}
+						if(unit1.equals("a")){
+							LinkedList link = new LinkedList();
+							String applePrice = "1";
+							String imagePath = "applenew.jpg";
+							appleNum = line.substring(6, size);
+						 	int a = Integer.parseInt(applePrice);
+							int b = Integer.parseInt(appleNum); 
+							int total = a*b;							
+		 					String totalPrice  = Integer.toString(total);
+							link.add(imagePath); //add image src
+							link.add(applePrice); // add price
+							link.add(appleNum); // add quality 
+							link.add(totalPrice); // add  total price	 
+													 
+							map.put("apple",link);
+						}
+						if(unit1.equals("p")){
+							LinkedList link = new LinkedList();
+							String pearPrice = "1";
+							String imagePath = "pearsnew.jpg";							
+							pearNum  = line.substring(5, size);		
+							int a = Integer.parseInt(pearPrice);
+							int b = Integer.parseInt(pearNum);
+							int total = a*b;
+							
+							String totalPrice  = Integer.toString(total);
+							link.add(imagePath); //add image src
+							link.add(pearPrice); // add price
+							link.add(pearNum); // add quality 
+							link.add(totalPrice); // add  total price								
+							map.put("pear",link);  
+						}
+
+						line = it.readLine();
+					
+					}
+					
+		 
+				%>
+				
+				
+				<%
+				/* store values in  keylist[][] */
+				Set set = map.keySet();
+			    int mapsize = map.size();
+				Iterator current = set.iterator();
+				int size = map.size();
+				int row = size;
+				int col = 5;
+				String[][] keylist = new String[size][5];
+				
+				
+				int count = 0;
+				int NumberOfItem = 0;
+				while(current.hasNext()){
+					String key = current.next().toString();
+					int s = 0;
+					keylist[count][s] = key;  // store key  in [][0] 
+					s++;
+					
+ 	 				for( int i = 0; i< 4; i++){
+						keylist[count][s] = map.get(key).get(i);   
+						
+						if(s == 3){
+							System.out.println("Print Quality: " + keylist[count][s]);
+							NumberOfItem = NumberOfItem  + Integer.parseInt( keylist[count][s]);
+						} 
+						s++;					
+					}   			
+					count ++;
+				}
+
+ 				StringBuffer values = new StringBuffer();				
+				
+ 				for(int i =0; i<row; i++){
+ 					 values.append('[');
+					for(int j = 0; j< col; j++){
+					
+						values.append('"').append(keylist[i][j]  ).append('"');
+						 if (j<(col-1) ) {
+						        values.append(',');
+						    }
+					}
+					
+					 values.append(']');
+					 if( i<(row-1)){
+						 values.append(',');	 
+					 }
+					 
+				} 
+				
+				/* System.out.println("value: " +values );    */
+				String sendStr = values.toString();
+				session.setAttribute("itMatrix",sendStr); 
+				
+				String ROW = Integer.toString(row);
+				session.setAttribute("row",ROW); 
+				
+				// pass the quality of items in shopping cart
+				session.setAttribute("row",ROW); 
+				
+}	else{
+	
+			String sendStr ="0";
+			session.setAttribute("itMatrix",sendStr); 
+			
+			String ROW = "0";
+			session.setAttribute("row",ROW); 
+	
+}
+	
+			
+			%>	 
+			
+			 
+	
+	</body>
+</html>

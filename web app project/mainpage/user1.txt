@@ -1,0 +1,8 @@
+apple 2
+pear 5
+apple 2
+redtomato 1
+yellowtomato 1
+raspberry 1
+redtomato 2
+yellowtomato 1
